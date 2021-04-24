@@ -1,0 +1,59 @@
+.hero-component {
+  height: 400px;
+  background: black;
+  color: white;
+  &__content {
+    height: 100%;
+    display: flex;
+
+    &__playing-now {
+      flex: 1;
+      max-width: calc(50% - 2rem);
+      box-sizing: border-box;
+      padding: 0 1rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      &__label {
+        font-size: 1.75rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      &__artist {
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin: 0.5rem 0 1rem !important;
+      }
+
+      &__genres {
+        display: flex;
+        &__cell {
+          background: var(--app-color-selected);
+          padding: 0.5rem !important;
+          border-radius: 25px;
+          border: 1px solid var(--app-color-background);
+          margin-right: 0.5rem !important;
+
+          &:last-child {
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+
+    &__thumbnail {
+      max-height: 100%;
+      flex: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

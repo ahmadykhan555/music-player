@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { initLocalStorage } from "./utility/localStorage";
 import AppLoader from "./components/AppLoader/AppLoader";
+import Hero from "./components/Hero/Hero";
 
 interface OwnProps extends PropsFromRedux {}
 
@@ -29,6 +30,7 @@ const App: React.FC<OwnProps> = ({ dispatch }) => {
 
   return (
     <div className='app'>
+      <Hero />
       <div className='app__songs-list'>
         <SongsList />
       </div>
