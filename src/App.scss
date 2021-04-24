@@ -1,0 +1,11 @@
+.app {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  &__music-player-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
