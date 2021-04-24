@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { toast } from "react-toastify";
 
 /**
  *
@@ -23,9 +24,17 @@ export const httpGET = (url: string): Promise<any> => {
  * @returns {Promise<AxiosResponse>} promise based response
  */
 export const httpPOST = (url: string, body = {}): Promise<AxiosResponse> => {
-  return axios.post(url, body, {
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await axios.post(url, body, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+      resolve(response.data);
+    } catch (e) {
+      toast(e.error, { position: "bottom-right", type: "error" });
+      reject(e);
+    }
   });
 };
