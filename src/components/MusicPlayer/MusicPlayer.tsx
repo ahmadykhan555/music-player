@@ -1,10 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { AppState } from "../../store/rootReducer";
+import { setPlayerState } from "../../store/songs/actions";
 import { PlayerStates } from "../../store/songs/types";
 import "./MusicPlayer.scss";
 interface OwnProps extends PropsFromRedux {}
-const MusicPlayer: React.FC<OwnProps> = ({ playerState, playingNow }) => {
+const MusicPlayer: React.FC<OwnProps> = ({
+  playerState,
+  playingNow,
+  dispatch,
+}) => {
   const playerRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -17,12 +22,21 @@ const MusicPlayer: React.FC<OwnProps> = ({ playerState, playingNow }) => {
     }
   }, [playerState, playerRef.current]);
 
+  const handlePause = () => {
+    dispatch(setPlayerState(PlayerStates.Paused));
+  };
+  const handlePlay = () => {
+    dispatch(setPlayerState(PlayerStates.Playing));
+  };
+
   return (
     <div className='music-player-component'>
       <audio
         ref={playerRef}
         controls
         autoPlay
+        onPause={handlePause}
+        onPlay={handlePlay}
         src={playingNow?.music_file_path}
       />
     </div>
