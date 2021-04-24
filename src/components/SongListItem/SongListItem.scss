@@ -40,8 +40,9 @@
   &__song-info {
     flex: 1;
     margin: 0 2rem;
+    text-transform: capitalize;
+
     &__name {
-      text-transform: capitalize;
       margin-bottom: 0.25rem !important;
     }
   }
