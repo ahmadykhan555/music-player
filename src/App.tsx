@@ -5,6 +5,7 @@ import "./App.scss";
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 import SongsList from "./components/SongsList/SongsList";
 import { setSongs } from "./store/songs/actions";
+import { initLocalStorage } from "./utility/localStorage";
 
 interface OwnProps extends PropsFromRedux {}
 
@@ -12,6 +13,7 @@ const App: React.FC<OwnProps> = ({ dispatch, songs: songsFromState }) => {
   // on mount
   useEffect(() => {
     loadData();
+    initLocalStorage();
   }, []);
 
   const loadData = async () => {

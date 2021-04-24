@@ -32,6 +32,10 @@
         object-fit: cover;
       }
     }
+
+    &--like {
+      margin-right: 0 !important;
+    }
   }
 
   &__song-info {
