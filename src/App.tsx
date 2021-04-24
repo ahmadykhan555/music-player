@@ -5,11 +5,13 @@ import "./App.scss";
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 import SongsList from "./components/SongsList/SongsList";
 import { setSongs } from "./store/songs/actions";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { initLocalStorage } from "./utility/localStorage";
 
 interface OwnProps extends PropsFromRedux {}
 
-const App: React.FC<OwnProps> = ({ dispatch, songs: songsFromState }) => {
+const App: React.FC<OwnProps> = ({ dispatch }) => {
   // on mount
   useEffect(() => {
     loadData();
@@ -29,6 +31,7 @@ const App: React.FC<OwnProps> = ({ dispatch, songs: songsFromState }) => {
       <div className='app__music-player-wrapper'>
         <MusicPlayer />
       </div>
+      <ToastContainer />
     </div>
   );
 };
