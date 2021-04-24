@@ -19,17 +19,9 @@ const Hero: React.FC<OwnProps> = ({ playingNow }) => {
           )}
           <div className='hero-component__content__playing-now__genres'>
             {playingNow?.song_genres?.map((genre) => (
-              <>
-                <p className='hero-component__content__playing-now__genres__cell'>
-                  {genre.name}
-                </p>
-                <p className='hero-component__content__playing-now__genres__cell'>
-                  {genre.name}
-                </p>
-                <p className='hero-component__content__playing-now__genres__cell'>
-                  {genre.name}
-                </p>
-              </>
+              <p className='hero-component__content__playing-now__genres__cell'>
+                {genre.name}
+              </p>
             ))}
           </div>
         </div>

@@ -24,5 +24,5 @@ export interface Song {
   song_genres: Genre[];
   song_release: string;
   source_info: string;
-  tags: null;
+  tags: any[];
 }
