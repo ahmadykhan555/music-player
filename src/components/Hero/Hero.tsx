@@ -5,7 +5,7 @@ import "./Hero.scss";
 interface OwnProps extends PropsFromRedux {}
 const Hero: React.FC<OwnProps> = ({ playingNow }) => {
   return (
-    <div className='hero-component'>
+    <div className='hero-component' data-testid='app-hero-banner'>
       <div className='hero-component__content'>
         <div className='hero-component__content__playing-now'>
           <p className='hero-component__content__playing-now__label'>
@@ -19,7 +19,9 @@ const Hero: React.FC<OwnProps> = ({ playingNow }) => {
           )}
           <div className='hero-component__content__playing-now__genres'>
             {playingNow?.song_genres?.map((genre) => (
-              <p className='hero-component__content__playing-now__genres__cell'>
+              <p
+                className='hero-component__content__playing-now__genres__cell'
+                key={`genre${genre.id}`}>
                 {genre.name}
               </p>
             ))}

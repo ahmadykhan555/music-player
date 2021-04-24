@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom/extend-expect";
 import { screen, render, cleanup } from "@testing-library/react";
-import AppLoader from "../AppLoader";
+import AppLoader from "../components/AppLoader/AppLoader";
 
 afterEach(() => cleanup());
 
