@@ -1,0 +1,10 @@
+.music-player-component {
+  height: 100%;
+  display: flex;
+
+  audio {
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+  }
+}
