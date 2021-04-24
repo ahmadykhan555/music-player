@@ -22,7 +22,6 @@
       border: none;
       padding: 0;
       display: flex;
-      margin-right: 2rem;
       cursor: pointer;
 
       img {
@@ -40,9 +39,18 @@
 
   &__song-info {
     flex: 1;
+    margin: 0 2rem;
     &__name {
       text-transform: capitalize;
       margin-bottom: 0.25rem !important;
+    }
+  }
+
+  @media (max-width: 760px) {
+    padding: 1rem;
+
+    &__song-info {
+      margin: 0 1rem;
     }
   }
 }
