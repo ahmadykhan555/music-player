@@ -7,12 +7,20 @@ const initialState: SongsState = {
 };
 
 const songsReducer = (
-  state: SongsState = initialState,
+  state = initialState,
   action: StateAction
-) => {
+): SongsState => {
   switch (action.type) {
     case SongsStateActions.SetSongs: {
       return { ...state, songs: action.payload };
+    }
+
+    case SongsStateActions.SetPlayingNow: {
+      return { ...state, playingNow: action.payload };
+    }
+
+    case SongsStateActions.SetPlayerState: {
+      return { ...state, playerState: action.payload };
     }
 
     default:
