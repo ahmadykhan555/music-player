@@ -1,12 +1,15 @@
 .song-list-item {
   padding: 1rem 2rem;
   background: white;
-  margin-bottom: 0.25rem;
   border-top: 1px solid var(--app-color-border);
   border-bottom: 1px solid var(--app-color-border);
   display: flex;
   align-items: center;
   font-weight: normal;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   &__controls {
     button {
