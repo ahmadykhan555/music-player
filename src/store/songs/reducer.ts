@@ -1,10 +1,6 @@
 import { StateAction } from "..";
-import { Song } from "../../models/song";
 import { SongsStateActions } from "./actions";
-
-interface SongsState {
-  songs: Song[];
-}
+import { SongsState } from "./types";
 
 const initialState: SongsState = {
   songs: [],
