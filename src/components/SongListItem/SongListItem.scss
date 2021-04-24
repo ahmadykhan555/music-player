@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   font-weight: normal;
+  border-radius: 10px;
 
   &:last-child {
     border-bottom: none;
@@ -22,6 +23,8 @@
       padding: 0;
       display: flex;
       margin-right: 2rem;
+      cursor: pointer;
+
       img {
         margin: auto;
         height: 20px;
