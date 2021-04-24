@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
  * @param url API endpoint
  * @returns {Promise<AxiosResponse>} promise based response
  */
-export const httpGET = (url: string): Promise<AxiosResponse> => {
+export const httpGET = (url: string): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios.get(url);
