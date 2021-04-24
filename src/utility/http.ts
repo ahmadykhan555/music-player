@@ -23,5 +23,9 @@ export const httpGET = (url: string): Promise<any> => {
  * @returns {Promise<AxiosResponse>} promise based response
  */
 export const httpPOST = (url: string, body = {}): Promise<AxiosResponse> => {
-  return axios.post(url, body);
+  return axios.post(url, body, {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
 };
