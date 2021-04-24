@@ -3,9 +3,8 @@ import { connect, ConnectedProps } from "react-redux";
 import { getSongs } from "./api/music";
 import "./App.scss";
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
-import { Song } from "./models/song";
-import { setPlayerState, setPlayingNow, setSongs } from "./store/songs/actions";
-import { PlayerStates } from "./store/songs/types";
+import SongsList from "./components/SongsList/SongsList";
+import { setSongs } from "./store/songs/actions";
 
 interface OwnProps extends PropsFromRedux {}
 
@@ -20,15 +19,11 @@ const App: React.FC<OwnProps> = ({ dispatch, songs: songsFromState }) => {
     dispatch(setSongs(songs));
   };
 
-  const handleSongClick = (song: Song) => {
-    dispatch(setPlayingNow(song));
-    dispatch(setPlayerState(PlayerStates.Playing));
-  };
   return (
     <div className='app'>
-      {songsFromState.map((song: Song) => (
-        <p onClick={() => handleSongClick(song)}>{song.name}</p>
-      ))}
+      <div className='app__songs-list'>
+        <SongsList />
+      </div>
       <div className='app__music-player-wrapper'>
         <MusicPlayer />
       </div>
