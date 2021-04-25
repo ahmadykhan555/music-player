@@ -9,7 +9,7 @@ const Hero: React.FC<OwnProps> = ({ playingNow }) => {
       <div className='hero-component__content'>
         <div className='hero-component__content__playing-now'>
           <p className='hero-component__content__playing-now__label'>
-            {playingNow?.name || "Your one stop music solution!"}
+            {playingNow?.name || "Your one stop music station!"}
           </p>
           {playingNow?.artist && (
             <p className='hero-component__content__playing-now__artist'>
