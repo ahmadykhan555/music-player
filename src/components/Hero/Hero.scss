@@ -2,6 +2,7 @@
   height: 400px;
   background: black;
   color: white;
+
   &__content {
     height: 100%;
     display: flex;
@@ -54,6 +55,39 @@
         height: 100%;
         object-fit: cover;
       }
+    }
+  }
+}
+
+// tablet view
+@media (max-width: 768px) {
+  .hero-component {
+    &__content {
+      flex-direction: column;
+      position: relative;
+
+      &__playing-now {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        background: var(--app-color-crystal-black);
+        padding: 1rem;
+        left: 0%;
+        bottom: 0;
+      }
+
+      &__thumbnail {
+        flex: 1;
+      }
+    }
+  }
+}
+
+// mobile view
+@media (max-width: 450px) {
+  .hero-component__content__playing-now {
+    &__label {
+      font-size: 1.25rem;
     }
   }
 }
