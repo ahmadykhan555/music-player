@@ -1,5 +1,7 @@
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
+import { toast } from "react-toastify";
+import { SongListItem } from "..";
 import { likeSong } from "../../api/music";
 import { Song } from "../../models/song";
 import { AppState } from "../../store/rootReducer";
@@ -10,7 +12,6 @@ import {
   LocalStorageKeys,
   saveInLocalStorage,
 } from "../../utility/localStorage";
-import SongListItem from "../SongListItem/SongListItem";
 import "./SongsList.scss";
 
 interface OwnProps extends PropsFromRedux {}
@@ -26,7 +27,20 @@ const SongsList: React.FC<OwnProps> = ({ songs, dispatch }) => {
       [songId]: liked,
     });
     if (liked) {
-      await likeSong(songId);
+      try {
+        await likeSong(songId);
+        toast("Added to your favorites", {
+          type: "success",
+        });
+      } catch (e) {
+        toast("Woops! That didn't work, refresh and try again!", {
+          type: "error",
+        });
+        saveInLocalStorage(LocalStorageKeys.LikedSongsList, {
+          ...list,
+          [songId]: false,
+        });
+      }
     }
   };
 

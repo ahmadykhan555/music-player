@@ -1,17 +1,18 @@
 import "@testing-library/jest-dom/extend-expect";
 import { screen, render, cleanup } from "@testing-library/react";
-import Hero from "../components/Hero/Hero";
 import { Provider } from "react-redux";
 import store from "../store/index";
 import { getSongs } from "../api/music";
 import { setPlayingNow } from "../store/songs/actions";
+import { Hero } from "../components";
+import { TAG_LINE } from "../constants/constants";
 
 afterEach(() => cleanup());
 
 test("Hero renders without crashing", async () => {
   render(
     <Provider store={store}>
-      <Hero />
+      <Hero tagLine={TAG_LINE} />
     </Provider>
   );
 
@@ -22,7 +23,7 @@ test("Hero renders without crashing", async () => {
 test("Hero renders correct playing now song", async () => {
   render(
     <Provider store={store}>
-      <Hero />
+      <Hero tagLine={TAG_LINE} />
     </Provider>
   );
   const songs = await getSongs();

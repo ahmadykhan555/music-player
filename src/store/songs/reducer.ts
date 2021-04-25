@@ -1,6 +1,5 @@
 import { StateAction } from "..";
-import { SongsStateActions } from "./actions";
-import { SongsState } from "./types";
+import { SongsState, SongsStateActions } from "./types";
 
 const initialState: SongsState = {
   songs: [],
