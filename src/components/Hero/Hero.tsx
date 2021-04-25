@@ -2,14 +2,16 @@ import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { AppState } from "../../store/rootReducer";
 import "./Hero.scss";
-interface OwnProps extends PropsFromRedux {}
-const Hero: React.FC<OwnProps> = ({ playingNow }) => {
+interface OwnProps extends PropsFromRedux {
+  tagLine: string;
+}
+const Hero: React.FC<OwnProps> = ({ playingNow, tagLine }) => {
   return (
     <div className='hero-component' data-testid='app-hero-banner'>
       <div className='hero-component__content'>
         <div className='hero-component__content__playing-now'>
           <p className='hero-component__content__playing-now__label'>
-            {playingNow?.name || "Your one stop music station!"}
+            {playingNow?.name || tagLine}
           </p>
           {playingNow?.artist && (
             <p className='hero-component__content__playing-now__artist'>

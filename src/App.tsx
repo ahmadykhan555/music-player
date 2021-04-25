@@ -9,6 +9,7 @@ import { initLocalStorage } from "./utility/localStorage";
 import { AppLoader, Hero, MusicPlayer, SongsList } from "./components";
 
 interface OwnProps extends PropsFromRedux {}
+const TAG_LINE = "Your one stop music station!";
 
 const App: React.FC<OwnProps> = ({ dispatch }) => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,7 +28,7 @@ const App: React.FC<OwnProps> = ({ dispatch }) => {
 
   return (
     <div className='app'>
-      <Hero />
+      <Hero tagLine={TAG_LINE} />
       <div className='app__songs-list'>
         <SongsList />
       </div>
