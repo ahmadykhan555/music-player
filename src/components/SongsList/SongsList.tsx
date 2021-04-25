@@ -1,5 +1,6 @@
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
+import { SongListItem } from "..";
 import { likeSong } from "../../api/music";
 import { Song } from "../../models/song";
 import { AppState } from "../../store/rootReducer";
@@ -10,7 +11,6 @@ import {
   LocalStorageKeys,
   saveInLocalStorage,
 } from "../../utility/localStorage";
-import SongListItem from "../SongListItem/SongListItem";
 import "./SongsList.scss";
 
 interface OwnProps extends PropsFromRedux {}

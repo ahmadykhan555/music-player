@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { getSongs } from "./api/music";
 import "./App.scss";
-import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
-import SongsList from "./components/SongsList/SongsList";
 import { setSongs } from "./store/songs/actions";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { initLocalStorage } from "./utility/localStorage";
-import AppLoader from "./components/AppLoader/AppLoader";
-import Hero from "./components/Hero/Hero";
+import { AppLoader, Hero, MusicPlayer, SongsList } from "./components";
 
 interface OwnProps extends PropsFromRedux {}
 

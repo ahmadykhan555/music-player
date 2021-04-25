@@ -2,7 +2,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { screen, render, cleanup } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { getSongs } from "../api/music";
-import SongListItem from "../components/SongListItem/SongListItem";
+import { SongListItem } from "../components";
 import store from "../store";
 
 afterEach(() => cleanup());

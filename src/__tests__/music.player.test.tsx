@@ -2,7 +2,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { screen, render, cleanup } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { getSongs } from "../api/music";
-import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
+import { MusicPlayer } from "../components";
 import { Song } from "../models/song";
 import store from "../store";
 import { setPlayingNow } from "../store/songs/actions";

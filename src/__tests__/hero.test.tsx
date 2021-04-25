@@ -1,10 +1,10 @@
 import "@testing-library/jest-dom/extend-expect";
 import { screen, render, cleanup } from "@testing-library/react";
-import Hero from "../components/Hero/Hero";
 import { Provider } from "react-redux";
 import store from "../store/index";
 import { getSongs } from "../api/music";
 import { setPlayingNow } from "../store/songs/actions";
+import { Hero } from "../components";
 
 afterEach(() => cleanup());
 
