@@ -29,7 +29,7 @@ const SongListItem: React.FC<OwnProps> = ({
   };
 
   return (
-    <div className='song-list-item'>
+    <div className='song-list-item' data-testid={`song-list-item-${song.id}`}>
       <div className='song-list-item__controls'>
         {song.id === playingNow?.id && playerState === PlayerStates.Playing ? (
           <button
@@ -52,7 +52,7 @@ const SongListItem: React.FC<OwnProps> = ({
       <div className='song-list-item__controls'>
         {liked ? (
           <button
-            className='song-list-item__controls--like'
+            className='song-list-item__controls--dislike'
             onClick={() => handleSongLiked(false)}>
             <img src={heartFilled} />
           </button>
