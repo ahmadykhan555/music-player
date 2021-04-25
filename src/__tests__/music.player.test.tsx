@@ -5,21 +5,7 @@ import { getSongs } from "../api/music";
 import MusicPlayer from "../components/MusicPlayer/MusicPlayer";
 import { Song } from "../models/song";
 import store from "../store";
-import { setPlayerState, setPlayingNow } from "../store/songs/actions";
-import { PlayerStates } from "../store/songs/types";
-
-window.HTMLMediaElement.prototype.load = () => {
-  /* do nothing */
-};
-window.HTMLMediaElement.prototype.play = () => {
-  /* do nothing */
-};
-window.HTMLMediaElement.prototype.pause = () => {
-  /* do nothing */
-};
-window.HTMLMediaElement.prototype.addTextTrack = () => {
-  /* do nothing */
-};
+import { setPlayingNow } from "../store/songs/actions";
 
 afterEach(() => cleanup());
 const MUSIC_PLAYER_ID = "app-music-player";
