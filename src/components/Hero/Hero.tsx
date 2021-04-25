@@ -15,8 +15,7 @@ const Hero: React.FC<OwnProps> = ({ playingNow, tagLine }) => {
           </p>
           {playingNow?.artist && (
             <p className='hero-component__content__playing-now__artist'>
-              By:
-              {playingNow.artist.artist_name || "Artist name"}
+              By: {playingNow.artist.artist_name || "Artist name"}
             </p>
           )}
           <div className='hero-component__content__playing-now__genres'>
