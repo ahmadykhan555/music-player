@@ -13,6 +13,7 @@ interface OwnProps extends PropsFromRedux {}
 
 const App: React.FC<OwnProps> = ({ dispatch }) => {
   const [loading, setLoading] = useState<boolean>(false);
+
   // on mount
   useEffect(() => {
     loadData();
