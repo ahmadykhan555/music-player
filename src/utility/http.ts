@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-import { toast } from "react-toastify";
 
 /**
  *
@@ -9,8 +8,8 @@ import { toast } from "react-toastify";
 export const httpGET = (url: string): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await axios.get(url);
-      resolve(response.data);
+      const data = await axios.get(url);
+      resolve(data);
     } catch (e) {
       reject(e);
     }
@@ -26,15 +25,19 @@ export const httpGET = (url: string): Promise<any> => {
 export const httpPOST = (url: string, body = {}): Promise<AxiosResponse> => {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await axios.post(url, body, {
+      const data = await axios.post(url, body, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
       });
-      resolve(response.data);
+      resolve(data);
     } catch (e) {
-      toast(e.error, { position: "bottom-right", type: "error" });
       reject(e);
     }
   });
 };
+
+// Response Interceptor
+const extractData = (response: AxiosResponse<any>) => response.data;
+const handleError = (error: any) => Promise.reject(error);
+axios.interceptors.response.use(extractData, handleError);
