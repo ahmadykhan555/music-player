@@ -7,9 +7,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { initLocalStorage } from "./utility/localStorage";
 import { AppLoader, Hero, MusicPlayer, SongsList } from "./components";
+import { TAG_LINE } from "./constants/constants";
 
 interface OwnProps extends PropsFromRedux {}
-const TAG_LINE = "Your one stop music station!";
 
 const App: React.FC<OwnProps> = ({ dispatch }) => {
   const [loading, setLoading] = useState<boolean>(false);
