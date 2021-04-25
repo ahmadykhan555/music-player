@@ -1,4 +1,4 @@
-# Music Player
+# Music Player ![Hits](https://views.whatilearened.today/views/github/ahmadykhan555/music-player.svg) 
 
 A simple music player for all your creative needs!
 
