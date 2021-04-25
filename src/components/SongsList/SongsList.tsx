@@ -29,6 +29,9 @@ const SongsList: React.FC<OwnProps> = ({ songs, dispatch }) => {
     if (liked) {
       try {
         await likeSong(songId);
+        toast("Added to your favorites", {
+          type: "success",
+        });
       } catch (e) {
         toast("Woops! That didn't work, refresh and try again!", {
           type: "error",
