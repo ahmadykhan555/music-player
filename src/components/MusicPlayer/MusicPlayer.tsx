@@ -30,7 +30,7 @@ const MusicPlayer: React.FC<OwnProps> = ({
   };
 
   return (
-    <div className='music-player-component'>
+    <div className='music-player-component' data-testid='app-music-player'>
       <audio
         ref={playerRef}
         controls
