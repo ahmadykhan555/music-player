@@ -10,3 +10,9 @@ export interface SongsState {
   playingNow?: Song;
   playerState?: PlayerStates;
 }
+
+export enum SongsStateActions {
+  SetSongs = "Set-songs",
+  SetPlayingNow = "Set-playing-now",
+  SetPlayerState = "Set-player-state",
+}

@@ -1,5 +1,5 @@
 import { Song } from "../../models/song";
-import { PlayerStates } from "./types";
+import { PlayerStates, SongsStateActions } from "./types";
 
 export const setSongs = (songs: Song[]) => ({
   type: SongsStateActions.SetSongs,
@@ -15,9 +15,3 @@ export const setPlayerState = (playerState: PlayerStates) => ({
   type: SongsStateActions.SetPlayerState,
   payload: playerState,
 });
-
-export enum SongsStateActions {
-  SetSongs = "Set-songs",
-  SetPlayingNow = "Set-playing-now",
-  SetPlayerState = "Set-player-state",
-}
