@@ -8,7 +8,7 @@ import { setPlayingNow } from "../store/songs/actions";
 
 afterEach(() => cleanup());
 
-test("Hero renders", async () => {
+test("Hero renders without crashing", async () => {
   render(
     <Provider store={store}>
       <Hero />
