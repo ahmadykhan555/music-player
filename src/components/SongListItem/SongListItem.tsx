@@ -28,6 +28,18 @@ const SongListItem: React.FC<OwnProps> = ({
     onSongLiked(liked, song.id);
   };
 
+  // const renderControl = (
+  //   classForButton: string,
+  //   icon: string,
+  //   onClickHandler: () => void
+  // ) => {
+  //   return (
+  //     <button className={`${classForButton}`} onClick={onClickHandler}>
+  //       <img src={icon} />
+  //     </button>
+  //   );
+  // };
+
   return (
     <div className='song-list-item' data-testid={`song-list-item-${song.id}`}>
       <div className='song-list-item__controls'>
@@ -35,13 +47,14 @@ const SongListItem: React.FC<OwnProps> = ({
           <button
             className='song-list-item__controls--pause'
             onClick={() => onSongItemClicked(PlayerStates.Paused, song)}>
-            <img src={pauseIcon} />
+            <img alt='' src={pauseIcon} />
           </button>
         ) : (
+          // {renderControl('song-list-item__controls--pause', pauseIcon, () => onSongItemClicked(PlayerStates.Paused, song) )}
           <button
             className='song-list-item__controls--play'
             onClick={() => onSongItemClicked(PlayerStates.Playing, song)}>
-            <img src={playIcon} />
+            <img alt='' src={playIcon} />
           </button>
         )}
       </div>
@@ -54,13 +67,13 @@ const SongListItem: React.FC<OwnProps> = ({
           <button
             className='song-list-item__controls--dislike'
             onClick={() => handleSongLiked(false)}>
-            <img src={heartFilled} />
+            <img src={heartFilled} alt='' />
           </button>
         ) : (
           <button
             className='song-list-item__controls--like'
             onClick={() => handleSongLiked(true)}>
-            <img src={heart} />
+            <img alt='' src={heart} />
           </button>
         )}
       </div>

@@ -18,6 +18,7 @@ const App: React.FC<OwnProps> = ({ dispatch }) => {
   useEffect(() => {
     loadData();
     initLocalStorage();
+    // eslint-disable-next-line
   }, []);
 
   const loadData = async () => {
