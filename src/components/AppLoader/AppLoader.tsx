@@ -10,7 +10,7 @@ const AppLoader: React.FC<AppLoaderProps> = ({ loaderText }) => {
     <div className='app-loader-component' id='alpha' data-testid='app-loader'>
       <div className='app-loader-component__content'>
         <p>{loaderText || "Loading, Buckle Up!"}</p>
-        <img src={logo}></img>
+        <img alt='' src={logo}></img>
       </div>
     </div>
   );

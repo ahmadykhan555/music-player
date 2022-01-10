@@ -11,7 +11,6 @@ const MusicPlayer: React.FC<OwnProps> = ({
   dispatch,
 }) => {
   const playerRef = useRef<HTMLAudioElement>(null);
-
   useEffect(() => {
     if (playerRef.current) {
       if (playerState === PlayerStates.Paused) {
@@ -20,6 +19,7 @@ const MusicPlayer: React.FC<OwnProps> = ({
         playerRef.current.play();
       }
     }
+    // eslint-disable-next-line
   }, [playerState, playerRef.current]);
 
   const handlePause = () => {

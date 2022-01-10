@@ -1,6 +1,11 @@
 /**
  * Initializes local storage with default values if any
  */
+
+export enum LocalStorageKeys {
+  LikedSongsList = "likedSongsList",
+}
+
 export const initLocalStorage = () => {
   if (!getFromLocalStorage(LocalStorageKeys.LikedSongsList)) {
     saveInLocalStorage(LocalStorageKeys.LikedSongsList, {});
@@ -24,13 +29,11 @@ export const saveInLocalStorage = (key: string, payload: any = "") => {
  * @param key identifier
  * @returns
  */
-export const getFromLocalStorage = (key: string) => {
+
+// readability improvement
+export const getFromLocalStorage = (key: string): any | null => {
   if (!key || (key && !key.trim())) {
     return null;
   }
-  return JSON.parse(localStorage.getItem(key) || "");
+  return JSON.parse(localStorage.getItem(key) || "{}");
 };
-
-export enum LocalStorageKeys {
-  LikedSongsList = "likedSongsList",
-}

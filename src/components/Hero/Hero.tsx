@@ -30,6 +30,7 @@ const Hero: React.FC<OwnProps> = ({ playingNow, tagLine }) => {
         </div>
         <div className='hero-component__content__thumbnail'>
           <img
+            alt=''
             src={
               playingNow?.cover_image_path ||
               "https://www.loudly.com/soundtracks/app/static/media/bgr-image.2a0f12b1.png"
